@@ -123,7 +123,7 @@ Now that you've made a certificate chain, you need to install it on the IoT Edge
       ```yaml
       certificates:
         device_ca_cert: "<CERTDIR>\\iot-edge-device-ca-<your_iot_edge_hostname>-full-chain.cert.pem"
-        device_ca_pk: "<CERTDIR>\\iot-edge-device-ca-<your_iot_edge_hostname>.pem"
+        device_ca_pk: "<CERTDIR>\\iot-edge-device-ca-<your_iot_edge_hostname>.key.pem"
         trusted_ca_certs: "<CERTDIR>\\<your root CA certificate file>"
       ```
    
@@ -131,14 +131,14 @@ Now that you've made a certificate chain, you need to install it on the IoT Edge
       ```yaml
       certificates:
         device_ca_cert: "<CERTDIR>/iot-edge-device-ca-<your_iot_edge_hostname>-full-chain.cert.pem"
-        device_ca_pk: "<CERTDIR>/iot-edge-device-ca-<your_iot_edge_hostname>.pem"
+        device_ca_pk: "<CERTDIR>/iot-edge-device-ca-<your_iot_edge_hostname>.key.pem"
         trusted_ca_certs: "<CERTDIR>/<your root CA certificate file>"
       ```
 
 4. On Linux devices, make sure that the user **iotedge** has read permissions for the directory holding the certificates. 
 
 # Certificate expiration on the gateway
-The expiration for these certificates is set to 30 days, so you need to make sure you have proceudre in place to create new certificates for IoT Edge devices and roll them on the gateway. You can use the steps above to partly automate the creation of new certificates every 30 days.
+The expiration for these certificates is set to 30 days, so you need to make sure you have a process in place to create new certificates for IoT Edge devices and roll them on the actuel IoT Edge device. You can use the steps above to partly automate the creation of new certificates every 30 days.
 
 # Disclaimer
 
