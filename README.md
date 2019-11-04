@@ -1,10 +1,18 @@
 # Generate Azure IoT Edge internal certificates using your own Root CA certificate
 
-In this article I descibe a way to generate the intermediate and device certificate for use with an Azure IoT Edge for internal communication and as an transparant gateway, based on your own Root CA certificate and private key. You can use a Linux machine (Azure VM) to generate the certificates, and then copy them over to any IoT Edge device running on any supported operating system. This article uses openssl and the tools provided in the Azure IoT Edge github repository.
+In this article we descibe a way to generate the intermediate and device certificate for use with an Azure IoT Edge for internal communication and as an transparant gateway, based on your own Root CA certificate and private key. You can use a Linux machine (Azure VM) to generate the certificates, and then copy them over to any IoT Edge device running on any supported operating system. This article uses openssl and the tools provided in the Azure IoT Edge github repository.
 
-## Disclaimer
+## The process
 
-Be aware that you are using your own Root CA certificate and key and therefore must make sure you do this in a secured manner. This article is provided under the MIT license.
+The process of creating the required IoT Edge internal certificates and keys as described in this article consists of a few steps:
+0. Copy your Root CA key and certificate to the development machine
+1. Create the intermediate certificate
+2. Create the IoT Edge certificate and key
+3. Update the IoT Edge device
+
+<p style="align:center">
+<img src="images/Process.png">
+</p>
 
 ## Prerequisites
 
@@ -94,7 +102,7 @@ Now that you've made a certificate chain, you need to install it on the IoT Edge
 1. Copy the following files from *\<WRKDIR>*. Save them anywhere on your IoT Edge device. We'll refer to the destination directory on your IoT Edge device as *\<CERTDIR>*. 
 
    * Device CA certificate -  `<WRKDIR>/certs/iot-edge-device-ca-<your_iot_edge_hostname>-full-chain.cert.pem`
-   * Device CA private key - `<WRKDIR>/private/iot-edge-device-ca-<your_iot_edge_hostname>.pem`
+   * Device CA private key - `<WRKDIR>/private/iot-edge-device-ca-<your_iot_edge_hostname>.key.pem`
    * Root CA - `<your root CA certificate file>`
 
    You can use a service like [Azure Key Vault](https://docs.microsoft.com/azure/key-vault) or a function like [Secure copy protocol](https://www.ssh.com/ssh/scp/) to move the certificate files.
@@ -127,3 +135,7 @@ Now that you've made a certificate chain, you need to install it on the IoT Edge
 
 # Certificate expiration on the gateway
 The expiration for these certificates is set to 30 days, so you need to make sure you have proceudre in place to create new certificates for IoT Edge devices and roll them on the gateway. You can use the steps above to partly automate the creation of new certificates every 30 days.
+
+# Disclaimer
+
+Be aware that you are using your own Root CA certificate and key and therefore must make sure you do this in a secured manner. This article is provided under the MIT license.
