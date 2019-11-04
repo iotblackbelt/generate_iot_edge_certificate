@@ -138,6 +138,21 @@ Now that you've made a certificate chain, you need to install it on the IoT Edge
 # Certificate expiration on the gateway
 The expiration for these certificates is set to 30 days, so you need to make sure you have a process in place to create new certificates for IoT Edge devices and roll them on the actuel IoT Edge device. You can use the steps above to partly automate the creation of new certificates every 30 days.
 
+## Extend expiration
+If your Root CA certificate has an extended expiration beyond 30 days and you want to extend the expiration for the certificates you create, you can update certGen.sh before you execute the creation of the certificates. Open the file `sudo nano certGen.sh`.
+
+   Replace the following lines:
+   ```yaml
+   DEFAULT_VALIDITY_DAYS=${DEFAULT_VALIDITY_DAYS:=30}
+   ```
+
+   with:
+   ```yaml
+   DEFAULT_VALIDITY_DAYS=${DEFAULT_VALIDITY_DAYS:=<your_expriration_in_days>}
+   ```
+
+   Save the file.
+
 # Disclaimer
 
 Be aware that you are using your own Root CA certificate and key and therefore must make sure you do this in a secured manner. This article is provided under the MIT license.
