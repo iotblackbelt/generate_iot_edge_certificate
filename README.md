@@ -63,7 +63,7 @@ The Azure IoT Edge git repository contains scripts that you can use to generate 
 
 In this section, you create the intermediate and leaf certificates and then connect them in a chain. Placing the certificates in a chain file allows to easily install them on your IoT Edge gateway device and any downstream devices.
 
-1. Create a directory to hold your Root CA certificate and key file. For instance *\<WRKDIR>/root*. Copy your Root CA certificate and key file to this directory.
+1. Create a directory to hold your Root CA certificate and key file. For instance **/root_certs**. Copy your Root CA certificate and key file to this directory.
 
 2. Create the intermediate certificate. These certificates are placed in *\<WRKDIR>*.
 
@@ -101,7 +101,7 @@ In this section, you create the intermediate and leaf certificates and then conn
 
 Now that you've made a certificate chain, you need to install it on the IoT Edge gateway device and configure the IoT Edge runtime to reference the new certificates. 
 
-1. Copy the following files from *\<WRKDIR>/<intermediate_dir>/*. Save them anywhere on your IoT Edge device. We'll refer to the destination directory on your IoT Edge device as *\<CERTDIR>*. 
+1. Copy the following files from *\<WRKDIR>*. Save them anywhere on your IoT Edge device. We'll refer to the destination directory on your IoT Edge device as *\<CERTDIR>*. 
 
    * Device CA certificate -  `<WRKDIR>/certs/iot-edge-device-ca-<your_iot_edge_hostname>-full-chain.cert.pem`
    * Device CA private key - `<WRKDIR>/private/iot-edge-device-ca-<your_iot_edge_hostname>.key.pem`
