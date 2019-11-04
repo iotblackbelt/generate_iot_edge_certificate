@@ -2,6 +2,14 @@
 
 In this article we descibe a way to generate the intermediate and device certificate for use with an Azure IoT Edge for internal communication and as an transparant gateway, based on your own Root CA certificate and private key. You can use a Linux machine (Azure VM) to generate the certificates, and then copy them over to any IoT Edge device running on any supported operating system. This article uses openssl and the tools provided in the Azure IoT Edge github repository.
 
+## Prerequisites
+
+* A development machine to create certificates. You can use an Ubuntu 18.04 Azure VM.
+* A Root CA certificate and key file, that can generate an intermediate or leaf certificate. Your Root CA private key needs to be a RSA private key, 4096 bit long modulus and you need to know the password of the Root CA certificate.
+* One or more Azure IoT Edge devices. Use the IoT Edge installation steps for one of the following operating systems:
+  * [Windows](how-to-install-iot-edge-windows.md)
+  * [Linux](how-to-install-iot-edge-linux.md)
+
 ## The process
 
 The process of creating the required IoT Edge internal certificates and keys as described in this article consists of a few steps:
@@ -16,13 +24,12 @@ The process of creating the required IoT Edge internal certificates and keys as 
 <img src="images/Process.png">
 </p>
 
-## Prerequisites
+## Certificate hierarchy
+When using this approach you can create a hierarchy of certificates. This hierarchy can  help you identify groups of IoT Edge devices with the same certificate setup for internal communication, such as expiration.
 
-* A development machine to create certificates. You can use an Ubuntu 18.04 Azure VM.
-* A Root CA certificate and key file, that can generate an intermediate or leaf certificate. Your Root CA private key needs to be a RSA private key, 4096 bit long modulus and you need to know the password of the Root CA certificate.
-* One or more Azure IoT Edge devices. Use the IoT Edge installation steps for one of the following operating systems:
-  * [Windows](how-to-install-iot-edge-windows.md)
-  * [Linux](how-to-install-iot-edge-linux.md)
+<p style="align:center">
+<img src="images/hierarchy.png">
+</p>
 
 ## Prepare creation scripts
 
