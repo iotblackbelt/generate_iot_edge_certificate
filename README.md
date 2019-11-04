@@ -18,7 +18,7 @@ Be aware that you are using your own Root CA certificate and key and therefore m
 
 The Azure IoT Edge git repository contains scripts that you can use to generate the certificates. In this section, you clone the IoT Edge repo and execute the scripts. 
 
-1. Login to your Linux development machine. Clone the git repo that contains scripts to generate non-production certificates. These scripts help you create the necessary certificates to set up a transparent gateway. 
+1. Login to your Linux development machine. Clone the git repo that contains scripts to generate (non-production) certificates. These scripts help you create the necessary certificates to set up an IoT Edge devices. 
 
    ```bash
    git clone https://github.com/Azure/iotedge.git
