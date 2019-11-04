@@ -77,7 +77,7 @@ In this section, you create the intermediate and leaf certificates and then conn
    If you've already created root and intermediate certificates in this directory, don't run this script again. Rerunning this script will overwrite the existing certificates. Instead, proceed to the next step. 
 
    ```bash
-   ./certGen.sh install_root_ca_from_files <path to your root certificate> <path to your root private key> <your private key password>
+  /certGen.sh install_root_ca_from_files <path to your root certificate> <path to your root private key> <your private key password>
    ```
 
    The script creates the intermediate certificates and keys.
@@ -96,7 +96,7 @@ In this section, you create the intermediate and leaf certificates and then conn
    * `<WRKDIR>/private/iot-edge-device-ca-<your_iot_edge_hostname>.key.pem`
 
    > [!NB]
-   > You can ingore the notification 'not for production' warning as your are using your own Root CA certificate and key.
+   > You can ingore the notification 'not for production' warning as you are using your own Root CA certificate and key.
 
 >[!TIP]
 >If you provide a name for each IoT Edge device you have, then the certificates and keys created by this command will reflect that name. You can use these files to provide each IoT Edge with its own set of certificates.
