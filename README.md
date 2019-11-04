@@ -83,7 +83,7 @@ In this section, you create the intermediate and leaf certificates and then conn
    The script creates the intermediate certificates and keys.
 
    > [!NB]
-   > You can ignore the notification 'not for production' as your are using your own Root CA certificate and key.
+   > You can ignore the notification 'not for production' as you are using your own Root CA certificate and key.
    
 3. Create the IoT Edge device CA certificate and private key with the following command. Provide a name for the CA certificate, for example the hostname of your IoT Edge device. The name is used to name the files and during certificate generation. 
 
