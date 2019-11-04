@@ -1,6 +1,6 @@
 # Generate Azure IoT Edge internal certificates using your own Root CA certificate
 
-In this article we descibe a way to generate the intermediate and device certificate for use with an Azure IoT Edge for internal communication and as an transparant gateway, based on your own Root CA certificate and private key. You can use a Linux machine (Azure VM) to generate the certificates, and then copy them over to any IoT Edge device running on any supported operating system. This article uses openssl and the tools provided in the Azure IoT Edge github repository.
+In this article we descibe a way to generate the intermediate and device certificate for use with an Azure IoT Edge for internal communication and as an transparant gateway, based on your own Root CA certificate and private key. You can use a Linux machine (Azure VM) to generate the certificates, and then copy them over to any IoT Edge device running on any supported operating system. This article uses openssl and the tools provided in the Azure IoT Edge github repository and is based on the Transparant Gateway approach as describe in Microsoft's documentation: https://docs.microsoft.com/en-us/azure/iot-edge/how-to-create-transparent-gateway.
 
 ## Prerequisites
 
