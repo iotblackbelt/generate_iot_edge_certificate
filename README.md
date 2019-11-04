@@ -77,7 +77,7 @@ In this section, you create the intermediate and leaf certificates and then conn
    If you've already created root and intermediate certificates in this directory, don't run this script again. Rerunning this script will overwrite the existing certificates. Instead, proceed to the next step. 
 
    ```bash
-   ../certGen.sh install_root_ca_from_files <path to your root certificate> <path to your root private key> <your private key password>
+   ./certGen.sh install_root_ca_from_files <path to your root certificate> <path to your root private key> <your private key password>
    ```
 
    The script creates the intermediate certificates and keys.
@@ -88,7 +88,7 @@ In this section, you create the intermediate and leaf certificates and then conn
 3. Create the IoT Edge device CA certificate and private key with the following command. Provide a name for the CA certificate, for example the hostname of your IoT Edge device. The name is used to name the files and during certificate generation. 
 
    ```bash
-   ../certGen.sh create_edge_device_ca_certificate "<your_iot_edge_hostname>"
+   ./certGen.sh create_edge_device_ca_certificate "<your_iot_edge_hostname>"
    ```
 
    The script creates several certificates and keys. Make note of two, which we'll refer to in the next section: 
