@@ -24,12 +24,21 @@ The process of creating the required IoT Edge internal certificates and keys as 
 <img src="images/Process.png">
 </p>
 
-## Certificate hierarchy
-When using this approach you can create a hierarchy of certificates. This hierarchy can  help you identify groups of IoT Edge devices with the same certificate setup for internal communication, such as expiration.
+## Azure IoT Edge certificate usage
+When using this approach you can create a hierarchy of certificates. This hierarchy can  help you identify groups of IoT Edge devices with the same certificate setup for internal communication, such as expiration. 
 
 <p style="align:center">
 <img src="images/hierarchy.png">
 </p>
+
+How IoT Edge uses certificates for internal communication and leaf devices can be found here: https://docs.microsoft.com/en-us/azure/iot-edge/iot-edge-certs.
+
+If you want to use your own chain of certificates based on your own CA, then it is good to know you need 3 files on the Azure IoT Edge:
+1. The Root CA certificate file
+2. The full certificate chain file, containing all certificates from root to device. This includes all intermediate certificates
+3. The IoT Edge device RSA private key file
+
+The IoT Edge device certificate must itself be a signing certificate, meaning it has certificate signing capabilities. Applying "V3 Basic constraints CA:True" to the device CA certificate at generation time, automatically sets up the required key usage properties.
 
 ## Prepare creation scripts
 
