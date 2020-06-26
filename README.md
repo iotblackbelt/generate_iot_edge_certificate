@@ -86,7 +86,7 @@ In this section, you create the intermediate and leaf certificates and then conn
    If you've already created root and intermediate certificates in this directory, don't run this script again. Rerunning this script will overwrite the existing certificates. Instead, proceed to the next step. 
 
    ```bash
-  /certGen.sh install_root_ca_from_files <path to your root certificate> <path to your root private key> <your private key password>
+   ./certGen.sh install_root_ca_from_files <path to your root certificate> <path to your root private key> <your private key password>
    ```
 
    The script creates the intermediate certificates and keys.
@@ -100,12 +100,9 @@ In this section, you create the intermediate and leaf certificates and then conn
    ./certGen.sh create_edge_device_ca_certificate "<your_iot_edge_hostname>"
    ```
 
-   The script creates several certificates and keys. Make note of two, which we'll refer to in the next section: 
+   The script creates several certificates and keys. Make a note of two, which we'll refer to in the next section: 
    * `<WRKDIR>/certs/iot-edge-device-ca-<your_iot_edge_hostname>-full-chain.cert.pem`
    * `<WRKDIR>/private/iot-edge-device-ca-<your_iot_edge_hostname>.key.pem`
-
-   > [!NB]
-   > You can ingore the notification 'not for production' warning as you are using your own Root CA certificate and key.
 
 >[!TIP]
 >If you provide a name for each IoT Edge device you have, then the certificates and keys created by this command will reflect that name. You can use these files to provide each IoT Edge with its own set of certificates.
@@ -171,4 +168,7 @@ If your Root CA certificate has an extended expiration beyond 30 days and you wa
 
 # Disclaimer
 
-Be aware that you are using your own Root CA certificate and key and therefore must make sure you do this in a secured manner. This article is provided under the MIT license.
+THIS INFORMATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE INFORMATION PROVIDED OR THE USE OR OTHER DEALINGS IN THE INFORMATION PROVIDED.
+THIS INFORMATION IS PROVIDED UNDER THE MIT LISENCE.
+
+>Be aware that you are using your own Root CA certificate and key and therefore must make sure you do this in a secured manner.
