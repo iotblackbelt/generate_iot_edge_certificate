@@ -16,7 +16,7 @@ The process of creating the required IoT Edge internal certificates and keys as 
 1. Create a working directory on the development machine
 2. Copy your Root CA key and certificate to the development machine
 3. Clone the tools from the Azure IoT Edge repository and update theses tools for your use.
-4. Create the intermediate certificate. You can create as nmany intermediates as you deem necessary by creating multiple working directories. These intermediates can be used to group IoT Edge devices. Some examples of intermediates can be: 'test', 'prod', etc.
+4. Create the intermediate certificate. You can create as many intermediates as you deem necessary by creating multiple working directories. These intermediates can be used to group IoT Edge devices. Some examples of intermediates can be: 'test', 'prod', etc.
 2. Create the IoT Edge certificate and key for that intermediate certificate. These certificates are stored in the same location as the intermediate certificate they belong to.
 3. Update the IoT Edge device
 
