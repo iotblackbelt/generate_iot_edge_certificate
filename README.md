@@ -7,8 +7,8 @@ In this article we descibe a way to generate the intermediate and device certifi
 * A development machine with openssl installed to create certificates. You can use an Ubuntu 18.04 Azure VM.
 * A Root CA certificate and key file, that can generate an intermediate or leaf certificate. Your Root CA private key needs to be a RSA private key, 4096 bit long modulus and you need to know the password of the Root CA certificate.
 * One or more Azure IoT Edge devices. Use the IoT Edge installation steps for one of the following operating systems:
-  * [Windows](how-to-install-iot-edge-windows.md)
-  * [Linux](how-to-install-iot-edge-linux.md)
+  * [Windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows)
+  * [Linux](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux)
 
 ## The process
 
